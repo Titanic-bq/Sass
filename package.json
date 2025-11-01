@@ -1,0 +1,24 @@
+{
+  "name": "sass-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sass ./sassfolder/index.scss ./css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Titanic-bq/Sass.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Titanic-bq/Sass/issues"
+  },
+  "homepage": "https://github.com/Titanic-bq/Sass#readme",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.93.3"
+  }
+}
