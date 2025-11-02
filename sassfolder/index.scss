@@ -1,7 +1,114 @@
+@import "default";
 $primary-color: #3498db;
 $primary-font: "sans-serif", "cursive";
 
 body {
   background: $primary-color;
   font-family: $primary-font;
+}
+
+/*.container nav ul>li:nth-child(1) {
+  font-size: 1em;
+}
+
+.container nav ul>li:nth-child(2) {
+  font-size: 1.2em;
+}*/
+
+//nesting
+.container {
+  width: 100%;
+  height: 100%;
+  nav {
+    ul {
+      li {
+        &:nth-child(1) {
+          font-size: 1em;
+        }
+        &:nth-child(2) {
+          font-size: 2em;
+        }
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+//mixins
+
+@mixin transform_Me($prop1, $prop2) {
+  width: $prop1;
+  height: $prop2;
+  background-color: yellow;
+  -ms-transorm: rotate(20deg) scale(1.5);
+  -webkit-transform: rotate(20deg) scale(1.5);
+  transform: rotate(20deg) scale(1.5);
+}
+
+.transform {
+  @include transform_Me(400px, 500px);
+}
+
+transorm-2 {
+  @include transform_Me(200px, 300px);
+}
+
+//extend
+
+%extend-border {
+  border: 2px solid black;
+  padding: 10px;
+  color: red;
+  font-size: 1.5em;
+}
+
+%extend-new {
+  background-color: lightgray;
+  margin: 15px;
+}
+
+.bordered {
+  @extend %extend-border;
+}
+
+.border1 {
+  @extend %extend-border;
+  margin: 20px;
+}
+
+//pseudo selector
+
+.element {
+  a {
+    text-decoration: none;
+    color: blue;
+    &:hover {
+      text-decoration: underline;
+      color: red;
+    }
+  }
+}
+
+.header {
+  /*addition*/
+  font-size: 4px + 2;
+
+  /*subtraction*/
+  height: 80% - 5;
+}
+
+/*multiplication*/
+.multi {
+  width: 20% * 3;
+  /*division*/
+  height: (64px / 2);
+}
+
+p {
+  &::before {
+    content: "I am a string with" + quate;
+    font-family: cursive + "serif";
+  }
 }
